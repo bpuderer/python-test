@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation  test suite documentation
-Resource  Resources/Common.resource
-Resource  Resources/AmazonApp.resource
+Resource  ../Resources/Common.resource
+Resource  ../Resources/AmazonApp.resource
 #Suite Setup
 Test Setup  Common.Begin Web Test
 Test Teardown  Common.End Web Test
@@ -9,15 +9,16 @@ Test Teardown  Common.End Web Test
 
 
 # https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html
-# $ robot -P . -d Results -x xunit.xml -v BROWSER:firefox Tests
+# $ robot -d Results -x xunit.xml -v BROWSER:firefox Tests
 # -N set top level suite name
 # -d reports dir
 # -i include tag
+# -t test   e.g. -t "Gherkin*"
 # -v set variable
 # -x xUnit XML
 # -P append to python path.  Current path is not added automatically (???)...
 # ...when using robot or python -m robot, python -m robot.run
-# can also use relative paths which is probably a worse solution
+# can also use relative paths as seen here
 
 
 *** Variables ***

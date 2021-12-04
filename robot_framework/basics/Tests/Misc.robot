@@ -51,7 +51,7 @@ Ignore failures and dialog demo
 
 Get Requests JSON
     Create Session  github  http://api.github.com
-    ${resp} =  Get Request  github  /users/bpuderer
+    ${resp} =  GET On Session  github  /users/bpuderer
     Should Be Equal As Strings  ${resp.status_code}  200
     Log  ${resp.json()}
     ${json} =  Set Variable  ${resp.json()}

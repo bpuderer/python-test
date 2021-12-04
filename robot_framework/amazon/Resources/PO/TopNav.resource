@@ -4,7 +4,7 @@ Library  SeleniumLibrary
 
 
 *** Variables ***
-${TOP_NAV_SEARCH_BUTTON} =  css=#nav-search > form > div.nav-right > div > input
+${TOP_NAV_SEARCH_BUTTON} =  id=nav-search-submit-button
 ${TOP_NAV_SEARCH_TEXT_BOX} =  id=twotabsearchtextbox
 
 

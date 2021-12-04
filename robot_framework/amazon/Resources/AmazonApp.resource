@@ -1,8 +1,8 @@
 *** Settings ***
 Documentation  Amazon top navigation
-Resource  Resources/PO/LandingPage.resource
-Resource  Resources/PO/SearchResults.resource
-Resource  Resources/PO/TopNav.resource
+Resource  PO/LandingPage.resource
+Resource  PO/SearchResults.resource
+Resource  PO/TopNav.resource
 
 
 *** Keywords ***
