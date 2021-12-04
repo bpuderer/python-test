@@ -5,6 +5,7 @@ Library  Dialogs
 Library  RequestsLibrary
 Library  SeleniumLibrary
 Library  XML
+Resource  ../Resources/MiscApp.resource
 
 
 *** Variables ***
@@ -18,10 +19,10 @@ ${XML_PATH} =  Inputs/XML/test.xml
 Gherkin style test case
     [Documentation]  gherkin style test case
     # robot does not support regex on steps
-    Given Echo  something
-    And Echo  something else
-    When Echo  something again
-    Then Echo  different thing
+    Given MiscApp.Echo  something
+    And MiscApp.Echo  something else
+    When MiscApp.Echo  something again
+    Then MiscApp.Echo  different thing
 
 
 Set variable in test case
@@ -44,7 +45,7 @@ Ignore failures and dialog demo
     ${new_browser} =  Get Selection From User  Which browser?  chrome  firefox
     Open Browser  http://www.amazon.com  ${new_browser}
     Run Keyword And Continue On Failure  Wait Until Page Contains  This text doesn't exist
-    Repeat Keyword  2 times  Echo  Test kept going!
+    Repeat Keyword  2 times  MiscApp.Echo  Test kept going!
     Log Variables
     Close Browser
 
@@ -76,10 +77,3 @@ XML Example
     # element count
     ${count} =  XML.Get Element Count  ${XML_PATH}  actor
     Should Be Equal As Numbers  ${count}  5
-
-
-*** Keywords ***
-
-Echo
-    [Arguments]  ${echo_text}
-    Log  ${echo_text}  level=WARN
