@@ -67,7 +67,7 @@ Read JSON File
     # NOTE: Path to file is from where robot is run, not from this file
     #${json} =  Get File  Inputs/JSON/test.json
     #${object} =  Evaluate  json.loads('''${json}''')  json
-    ${object} =  Evaluate  json.load(open("Inputs/JSON/test.json", "r"))  json
+    ${object} =  Evaluate  json.load(open("Data/JSON/test.json", "r"))  json
     Log  Name: ${object["first_name"]} ${object["last_name"]}  WARN
 
 

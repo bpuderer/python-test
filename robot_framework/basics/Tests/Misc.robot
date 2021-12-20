@@ -11,7 +11,7 @@ Resource  ../Resources/MiscApp.resource
 *** Variables ***
 # case insensitive
 @{MY_LIST_VARIABLE} =  First thing  Second thing
-${XML_PATH} =  Inputs/XML/test.xml
+${XML_PATH} =  Data/XML/test.xml
 
 
 *** Test Cases ***
