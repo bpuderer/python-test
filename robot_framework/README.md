@@ -17,3 +17,9 @@
     pip install robotframework-seleniumlibrary
     which chromedriver
     pip install robotframework-requests
+
+
+Execution
+1. Variables
+2. Settings
+3. Test Cases
