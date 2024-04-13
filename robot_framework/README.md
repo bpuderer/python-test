@@ -2,6 +2,8 @@
 
 [Robot Framework](https://robotframework.org/)
 
+[Robot Framework Standard Libraries](https://robotframework.org/robotframework/#standard-libraries)
+
 [Robot Framework GitHub](https://github.com/robotframework/robotframework)
 
 [Robot Framework User Guide](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html)
