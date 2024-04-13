@@ -2,20 +2,26 @@
 
 [Robot Framework](https://robotframework.org/)
 
+[Robot Framework GitHub](https://github.com/robotframework/robotframework)
+
 [Robot Framework User Guide](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html)
+
+[Robot Framework Docs](https://docs.robotframework.org/)
 
 [Standard Libraries](https://robotframework.org/robotframework/#standard-libraries)
 
-[Selenium Library](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html)
+[Selenium Library Keyword Docs](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html)
 
-[Requests Library](https://docs.robotframework.org/docs/different_libraries/requests)
+[ChromeDriver Download](https://chromedriver.chromium.org/)
+
+[Requests Library Keyword Docs](https://marketsquare.github.io/robotframework-requests/doc/RequestsLibrary.html)
 
 
-    python3 -m venv robot-tau
-    source robot-tau/bin/activate
+    python3 -m venv robotfw
+    source robotfw/bin/activate
     pip install robotframework
     pip install robotframework-seleniumlibrary
-    which chromedriver
+    Copy chromedriver to path
     pip install robotframework-requests
 
 
