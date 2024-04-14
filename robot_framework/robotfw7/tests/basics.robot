@@ -4,10 +4,10 @@ Metadata    Free Suite Metadata    Shows as documentation in reports
 Metadata    Robot Framework    7.0
 Library    Dialogs
 Library    Collections
+Resource    ../resources/test.resource
 
 
 *** Variables ***
-${my_var}     my_value
 @{my_list}    Apple    Banana    Orange
 &{my_dict}    name=my_value1    password=my_value2
 
@@ -17,7 +17,6 @@ Hello World Test
     [Documentation]    Hello world test obviously
     ...
     ...                Second line of documentation
-    [Tags]    useless
     Log    Hello world!
     Log To Console    Hello world! Console edition
     Log Variables
@@ -40,8 +39,11 @@ List Slice
 
 Dict
     &{dict1} =     Create Dictionary    key1=dict1val1
+    Set To Dictionary    ${dict1}    key2=dict1val2
     Log To Console    ${dict1}[key1]
-    Log To Console    ${dict1.key1}
+    Log To Console    ${dict1.key2}
+    Dictionary Should Contain Item    ${dict1}    key1    dict1val1
+    Dictionary Should Contain Item    ${dict1}    key2    dict1val2
     ${val} =    Get From Dictionary    ${dict1}    key1
     Log To Console    ${val}
 
@@ -61,6 +63,7 @@ Eval
 
 
 Variables Section Demo
+    # ${my_var} is defined in test.resource
     Log    ${my_var}
     Log    ${my_list}
     Log    ${my_dict}
@@ -68,12 +71,14 @@ Variables Section Demo
 
 Variable From Command Line
     # robot -v from_command_line:123 hw.robot
-    # global and override
+    # global and overrides
     # Log To Console   ${from_command_line}
     No Operation
 
 
 New For RF7 - VAR
+    # https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#var-syntax
+    # The VAR marker is case-sensitive and it must be followed by a variable name and value.
     VAR    ${my_var2}     my_value
     VAR    @{my_list2}    Apple    Banana    Orange
     VAR    &{my_dict2}    name=my_value1    password=my_value2
