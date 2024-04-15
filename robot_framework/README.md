@@ -18,6 +18,10 @@
 
 [Requests Library Keyword Docs](https://marketsquare.github.io/robotframework-requests/doc/RequestsLibrary.html)
 
+[RobotCode - VS Code Extension](https://github.com/d-biehl/robotcode)
+
+[Repo for Paul Merrill's TAU Robot Framework course](https://gitlab.com/bftft/robot-framework-testautomationu-2022)
+
 
     python3 -m venv robotfw
     source robotfw/bin/activate
@@ -27,7 +31,7 @@
     pip install robotframework-requests
 
 
-Execution
+Execution Order
 1. Variables
 2. Settings
 3. Test Cases

@@ -4,6 +4,7 @@ Suite Setup       Log To Console    Suite Setup
 Test Setup        Log To Console    Settings Test Setup
 Test Teardown     Log To Console    Settings Test Teardown
 Suite Teardown    Log To Console    Suite Teardown
+# use Builtin Run Keywords to execute multiple keywords in a sequence
 
 
 *** Test Cases ***
