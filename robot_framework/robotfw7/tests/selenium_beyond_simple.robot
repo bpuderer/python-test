@@ -1,21 +1,17 @@
 *** Settings ***
 Documentation    https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html
-Library  SeleniumLibrary
+Resource         ../resources/selenium_setup.resource
+Resource         ../resources/po/google_home_page.resource
+Resource         ../resources/po/results_page.resource
+Test Setup       Run Keywords    Configure Selenium    Navigate To Home Page
+Test Teardown    Exit Selenium
 
 
 *** Test Cases ***
 SeleniumLibrary Sanity Check
-    #${new_browser} =  Get Selection From User  Which browser?  chrome  firefox
-    #Open Browser  https://www.google.com  ${new_browser}
-    Open Browser    https://www.google.com    chrome
-    Set Selenium Speed    1s
+    VAR    ${search_value}    electric guitar
     #Run Keyword And Continue On Failure  Wait Until Page Contains  This text doesn't exist
-    Wait Until Page Contains    Gmail
-    Page Should Contain Button    Google Search
-    Page Should Contain Button    I'm Feeling Lucky
-    Page Should Contain Link    Privacy
-    Page Should Contain Link    Terms
-    Input Text    css:textarea[title="Search"]    electric guitar
-    Click Element    xpath://span[b=" amp"]
-    Capture Page Screenshot
-    Close Browser
+    Enter Text In Search Field    ${search_value}
+    #Click Suggestion    amp
+    Click Google Search Button
+    Confirm Results Page Title    ${search_value}

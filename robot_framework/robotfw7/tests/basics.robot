@@ -4,7 +4,8 @@ Metadata    Free Suite Metadata    Shows as documentation in reports
 Metadata    Robot Framework    7.0
 Library    Dialogs
 Library    Collections
-Resource    ../resources/test.resource
+Resource    ../resources/helpers.resource
+Resource    ../resources/settings.resource
 
 
 *** Variables ***
@@ -63,7 +64,7 @@ Eval
 
 
 Variables Section Demo
-    # ${my_var} is defined in test.resource
+    # ${my_var} is defined in settings.resource
     Log    ${my_var}
     Log    ${my_list}
     Log    ${my_dict}

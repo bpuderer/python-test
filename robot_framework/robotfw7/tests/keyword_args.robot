@@ -1,7 +1,7 @@
 *** Settings ***
 Name    Demo keyword arguments and importing from resource file
 Library    DateTime
-Resource    ../resources/test.resource
+Resource    ../resources/helpers.resource
 
 
 *** Test Cases ***
