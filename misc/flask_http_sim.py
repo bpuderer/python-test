@@ -40,12 +40,12 @@ def get_book(bookid):
 def create_book():
     if not request.json:
         abort(400)
-    elif 'identifier' not in request.json or 'ISBN-10' not in request.json['identifier'] or 'title' not in request.json:
+    elif ('identifier' not in request.json) or ('ISBN-10' not in request.json['identifier']) or ('title' not in request.json):
         abort(400)
     #better to use duck typing
-    elif type(request.json['identifier']['ISBN-10']) != unicode or type(request.json['title']) != unicode:
+    elif (type(request.json['identifier']['ISBN-10']) != str) or (type(request.json['title']) != str):
         abort(400)
-    elif not request.json['identifier']['ISBN-10'].strip() or not request.json['title'].strip():
+    elif (not request.json['identifier']['ISBN-10'].strip()) or (not request.json['title'].strip()):
         abort(400)
     elif [book for book in books if book['identifier']['ISBN-10'] == request.json['identifier']['ISBN-10']]:
         abort(409)
@@ -60,9 +60,9 @@ def update_book(bookid):
     elif 'identifier' not in request.json or 'ISBN-10' not in request.json['identifier'] or 'title' not in request.json:
         abort(400)
     #better to use duck typing
-    elif type(request.json['identifier']['ISBN-10']) != unicode or type(request.json['title']) != unicode:
+    elif (type(request.json['identifier']['ISBN-10']) != str) or (type(request.json['title']) != str):
         abort(400)
-    elif not request.json['identifier']['ISBN-10'].strip() or not request.json['title'].strip():
+    elif (not request.json['identifier']['ISBN-10'].strip()) or (not request.json['title'].strip()):
         abort(400)
 
     book = [book for book in books if book['identifier']['ISBN-10'] == bookid]
